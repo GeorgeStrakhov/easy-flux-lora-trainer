@@ -14,9 +14,9 @@ from llm_methods import generate_embedding, generate_description
 
 from replicate_methods import create_replicate_model, start_training
 
-SKIP_RESIZE_AND_DESCRIPTION = True
-SKIP_MODEL_CREATION = True
-SKIP_TRAINING = True
+SKIP_RESIZE_AND_DESCRIPTION = False
+SKIP_MODEL_CREATION = False
+SKIP_TRAINING = False
 
 FILE_EXTENSIONS = [".jpg", ".png"]
 REPLICATE_USER_NAME = "replicate_user_name"
