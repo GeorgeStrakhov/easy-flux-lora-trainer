@@ -14,7 +14,7 @@ from llm_methods import generate_embedding, generate_description
 
 from replicate_methods import create_replicate_model, start_training
 
-SKIP_RESIZE_AND_DESCRIPTION = False
+SKIP_RESIZE_AND_DESCRIPTION = False 
 SKIP_MODEL_CREATION = False
 SKIP_TRAINING = False
 
@@ -150,7 +150,7 @@ def main():
                     image_path = os.path.join(TRAINING_PACK_DIR, image_file)
                     with open(os.path.join(TRAINING_PACK_DIR, f"{os.path.splitext(image_file)[0]}.txt"), "r") as desc_file:
                         image_description = desc_file.read()
-                    embedding = generate_embedding(image_description)
+                    embedding = generate_embedding(image_description, model="text-embedding-3-small")
                     writer.writerow([image_file, image_description, embedding])
 
         print(f"Embeddings created successfully and saved in {TRAINING_PACK_DIR}/embeddings.csv")

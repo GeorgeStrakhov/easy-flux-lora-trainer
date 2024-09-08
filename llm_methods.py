@@ -15,7 +15,7 @@ def encode_image(image_path):
 
 # function to generate embedding from a given text
 def generate_embedding(text, model="text-embedding-3-small"):
-    response = client.embeddings.create(input=text, model="text-embedding-3-small")
+    response = client.embeddings.create(input=text, model=model)
     return response.data[0].embedding
 
 # function to generate description from a given image
